@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Woofer</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f4f4f4;
+    }
+
+    header {
+      background: #333;
+      color: white;
+      padding: 1em;
+      text-align: center;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background: #555;
+    }
+
+    nav button {
+      background: none;
+      border: none;
+      color: white;
+      padding: 1em;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    nav button:hover, nav button.active {
+      background: #777;
+    }
+
+    .tab-content {
+      display: none;
+      padding: 2em;
+      background: white;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1em;
+      background: #333;
+      color: white;
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Welcome to My Site</h1>
+  </header>
+
+  <nav>
+    <button class="tablink active" onclick="openTab(event, 'home')">Home</button>
+    <button class="tablink" onclick="openTab(event, 'about')">About Me</button>
+    <button class="tablink" onclick="openTab(event, 'contact')">Contact</button>
+  </nav>
+
+  <div id="home" class="tab-content active">
+    <h2>Home</h2>
+    <p>Aspiring Psychologist and Software Engineer</p>
+  </div>
+
+  <div id="about" class="tab-content">
+    <h2>About Me</h2>
+    <p> Hello, my name is Woofer. I am aspiring to obtain a license to practice psychology.
+        I am also planning on obtaining some sort of certification within the fields of Computer Science and Music Production.
+        For any questions or inquiries, all relative contact information can be found under the contact tab. Have a great day!</p>
+  </div>
+
+  <div id="contact" class="tab-content">
+    <h2>Contact</h2>
+    <p>Discord: <a href="https://discordapp.com/users/570661577041379358">wooferthywoof</a></p>
+    <p>Twitter: <a href="https://x.com/TheWooferrr">@TheWooferrr</a></p>
+    <p>GitHub: <a href="https://github.com/WooferTheWoof">WooferTheWoof</a></p>
+  </div>
+
+  <footer>
+    &copy; 2025 Woofer
+  </footer>
+
+  <script>
+    function openTab(evt, tabName) {
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tab-content");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].classList.remove("active");
+      }
+      tablinks = document.getElementsByClassName("tablink");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].classList.remove("active");
+      }
+      document.getElementById(tabName).classList.add("active");
+      evt.currentTarget.classList.add("active");
+    }
+  </script>
+
+</body>
+</html>
